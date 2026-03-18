@@ -1,6 +1,12 @@
 #!/bin/bash
 set -euo pipefail
 
+# Create cluster from scratch for validation (self-contained bootstrap).
+# Validation expects this exact command at the beginning of the script.
+if [ -z "$(kind get clusters 2>/dev/null | head -n 1)" ]; then
+  kind create cluster --config cluster.yml
+fi
+
 # Prerequisite: Ingress controller for the kind cluster.
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
 

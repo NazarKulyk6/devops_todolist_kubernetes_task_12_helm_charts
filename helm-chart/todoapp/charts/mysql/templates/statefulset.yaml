@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ .Chart.Name }}-sts
   namespace: {{ .Values.namespaceName | default .Chart.Name }}
 spec:
   selector:
     matchLabels:
       app: {{ .Chart.Name }}
-  serviceName: {{ .Chart.Name }}
+  serviceName: {{ .Chart.Name }}-headless-svc
   replicas: {{ .Values.replicaCount }}
   template:
     metadata:
