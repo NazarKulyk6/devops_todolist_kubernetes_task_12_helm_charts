@@ -4,6 +4,11 @@ set -euo pipefail
 # Prerequisite: Ingress controller for the kind cluster.
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
 
+# Taint nodes labeled with `app=mysql` so that tolerations/affinity are exercised.
+for n in $(kubectl get nodes -l app=mysql -o name 2>/dev/null); do
+  kubectl taint "$n" app=mysql:NoSchedule --overwrite >/dev/null 2>&1 || true
+done
+
 # Local validation helper:
 # If this cluster already has resources from previous runs, Helm cannot "import" them
 # without ownership metadata. For task validation we can safely reset these namespaces.

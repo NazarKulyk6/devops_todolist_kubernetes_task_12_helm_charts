@@ -5,33 +5,31 @@ devops-microservices   pod/frontend-deployment-865b897987-2qzfz                 
 devops-microservices   pod/frontend-deployment-865b897987-94lsr                   1/1     Running     0              2d10h
 devops-microservices   pod/postgres-deployment-6487db59cb-qzjkj                   1/1     Running     0              2d10h
 devops-microservices   pod/service-test-lg56w                                     0/1     Completed   0              2d10h
-ingress-nginx          pod/ingress-nginx-admission-create-szhc6                   0/1     Completed   0              2s
-ingress-nginx          pod/ingress-nginx-admission-patch-s8zpf                    0/1     Completed   0              2s
-ingress-nginx          pod/ingress-nginx-controller-589f5b59c9-nmwdz              1/1     Running     0              93m
+ingress-nginx          pod/ingress-nginx-controller-589f5b59c9-nmwdz              1/1     Running     0              98m
 kube-system            pod/coredns-5d78c9869d-bmhz5                               1/1     Running     0              2d10h
 kube-system            pod/coredns-5d78c9869d-rpcvl                               1/1     Running     0              2d10h
 kube-system            pod/etcd-devops-cluster-control-plane                      1/1     Running     0              2d10h
 kube-system            pod/kindnet-lsg2r                                          1/1     Running     0              2d10h
 kube-system            pod/kube-apiserver-devops-cluster-control-plane            1/1     Running     0              2d10h
-kube-system            pod/kube-controller-manager-devops-cluster-control-plane   1/1     Running     1 (100m ago)   2d10h
+kube-system            pod/kube-controller-manager-devops-cluster-control-plane   1/1     Running     1 (104m ago)   2d10h
 kube-system            pod/kube-proxy-tckpd                                       1/1     Running     0              2d10h
-kube-system            pod/kube-scheduler-devops-cluster-control-plane            1/1     Running     1 (100m ago)   2d10h
+kube-system            pod/kube-scheduler-devops-cluster-control-plane            1/1     Running     1 (104m ago)   2d10h
 local-path-storage     pod/local-path-provisioner-6bc4bddd6b-vp9vn                1/1     Running     0              2d10h
 mysql                  pod/mysql-0                                                0/1     Pending     0              0s
-todoapp                pod/todoapp-b89d976b7-4pxj9                                0/1     Pending     0              0s
-todoapp                pod/todoapp-b89d976b7-7vfh2                                0/1     Pending     0              0s
+todoapp                pod/todoapp-b89d976b7-bksrl                                0/1     Pending     0              0s
+todoapp                pod/todoapp-b89d976b7-rw5c9                                0/1     Pending     0              0s
 
 NAMESPACE              NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
 default                service/kubernetes                           ClusterIP      10.96.0.1       <none>        443/TCP                      2d10h
 devops-microservices   service/backend-service                      ClusterIP      10.96.149.198   <none>        8080/TCP                     2d10h
 devops-microservices   service/frontend-service                     LoadBalancer   10.96.215.238   <pending>     80:32162/TCP                 2d10h
 devops-microservices   service/postgres-service                     ClusterIP      10.96.253.61    <none>        5432/TCP                     2d10h
-ingress-nginx          service/ingress-nginx-controller             LoadBalancer   10.96.211.111   <pending>     80:30328/TCP,443:30215/TCP   93m
-ingress-nginx          service/ingress-nginx-controller-admission   ClusterIP      10.96.107.215   <none>        443/TCP                      93m
+ingress-nginx          service/ingress-nginx-controller             LoadBalancer   10.96.211.111   <pending>     80:30328/TCP,443:30215/TCP   98m
+ingress-nginx          service/ingress-nginx-controller-admission   ClusterIP      10.96.107.215   <none>        443/TCP                      98m
 kube-system            service/kube-dns                             ClusterIP      10.96.0.10      <none>        53/UDP,53/TCP,9153/TCP       2d10h
 mysql                  service/mysql                                ClusterIP      None            <none>        3306/TCP                     0s
-todoapp                service/todoapp-nodeport                     NodePort       10.96.227.217   <none>        80:30007/TCP                 0s
-todoapp                service/todoapp-service                      ClusterIP      10.96.49.245    <none>        80/TCP                       0s
+todoapp                service/todoapp-nodeport                     NodePort       10.96.194.143   <none>        80:30007/TCP                 0s
+todoapp                service/todoapp-service                      ClusterIP      10.96.219.53    <none>        80/TCP                       0s
 
 NAMESPACE     NAME                        DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
 kube-system   daemonset.apps/kindnet      1         1         1       1            1           kubernetes.io/os=linux   2d10h
@@ -41,7 +39,7 @@ NAMESPACE              NAME                                       READY   UP-TO-
 devops-microservices   deployment.apps/backend-deployment         2/2     2            2           2d10h
 devops-microservices   deployment.apps/frontend-deployment        2/2     2            2           2d10h
 devops-microservices   deployment.apps/postgres-deployment        1/1     1            1           2d10h
-ingress-nginx          deployment.apps/ingress-nginx-controller   1/1     1            1           93m
+ingress-nginx          deployment.apps/ingress-nginx-controller   1/1     1            1           98m
 kube-system            deployment.apps/coredns                    2/2     2            2           2d10h
 local-path-storage     deployment.apps/local-path-provisioner     1/1     1            1           2d10h
 todoapp                deployment.apps/todoapp                    0/2     2            0           0s
@@ -52,7 +50,7 @@ devops-microservices   replicaset.apps/backend-deployment-75cb896997         2  
 devops-microservices   replicaset.apps/frontend-deployment-865b897987        2         2         2       2d10h
 devops-microservices   replicaset.apps/frontend-deployment-8bc579497         0         0         0       2d10h
 devops-microservices   replicaset.apps/postgres-deployment-6487db59cb        1         1         1       2d10h
-ingress-nginx          replicaset.apps/ingress-nginx-controller-589f5b59c9   1         1         1       93m
+ingress-nginx          replicaset.apps/ingress-nginx-controller-589f5b59c9   1         1         1       98m
 kube-system            replicaset.apps/coredns-5d78c9869d                    2         2         2       2d10h
 local-path-storage     replicaset.apps/local-path-provisioner-6bc4bddd6b     1         1         1       2d10h
 todoapp                replicaset.apps/todoapp-b89d976b7                     2         2         0       0s
@@ -63,17 +61,15 @@ mysql       statefulset.apps/mysql   0/2     0s
 NAMESPACE   NAME                                          REFERENCE            TARGETS                        MINPODS   MAXPODS   REPLICAS   AGE
 todoapp     horizontalpodautoscaler.autoscaling/todoapp   Deployment/todoapp   <unknown>/70%, <unknown>/70%   2         5         0          0s
 
-NAMESPACE              NAME                                       COMPLETIONS   DURATION   AGE
-devops-microservices   job.batch/service-test                     1/1           4s         2d10h
-ingress-nginx          job.batch/ingress-nginx-admission-create   0/1           2s         2s
-ingress-nginx          job.batch/ingress-nginx-admission-patch    0/1           2s         2s
+NAMESPACE              NAME                     COMPLETIONS   DURATION   AGE
+devops-microservices   job.batch/service-test   1/1           4s         2d10h
 
 NAMESPACE              NAME                                                             DATA   AGE
 default                configmap/kube-root-ca.crt                                       1      2d10h
 devops-microservices   configmap/kube-root-ca.crt                                       1      2d10h
 devops-microservices   configmap/postgres-config                                        2      2d10h
-ingress-nginx          configmap/ingress-nginx-controller                               0      93m
-ingress-nginx          configmap/kube-root-ca.crt                                       1      93m
+ingress-nginx          configmap/ingress-nginx-controller                               0      98m
+ingress-nginx          configmap/kube-root-ca.crt                                       1      98m
 kube-node-lease        configmap/kube-root-ca.crt                                       1      2d10h
 kube-public            configmap/cluster-info                                           1      2d10h
 kube-public            configmap/kube-root-ca.crt                                       1      2d10h
@@ -93,7 +89,7 @@ todoapp                configmap/todoapp-app-config                             
 
 NAMESPACE              NAME                                   TYPE                 DATA   AGE
 devops-microservices   secret/postgres-secret                 Opaque               1      2d10h
-ingress-nginx          secret/ingress-nginx-admission         Opaque               3      93m
+ingress-nginx          secret/ingress-nginx-admission         Opaque               3      98m
 mysql                  secret/mysql-mysql-secrets             Opaque               3      0s
 todoapp                secret/sh.helm.release.v1.todoapp.v1   helm.sh/release.v1   1      0s
 todoapp                secret/todoapp-app-secret              Opaque               5      0s
