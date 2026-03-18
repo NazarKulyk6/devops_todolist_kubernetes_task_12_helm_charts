@@ -28,10 +28,10 @@ kubectl annotate namespace todoapp meta.helm.sh/release-name=todoapp meta.helm.s
 kubectl annotate namespace mysql meta.helm.sh/release-name=todoapp meta.helm.sh/release-namespace=todoapp --overwrite >/dev/null 2>&1 || true
 
 # Deploy app via Helm chart.
-helm dependency update ./helm-chart/todoapp
-helm upgrade --install todoapp ./helm-chart/todoapp \
+helm dependency update ./.infrastructure/helm-chart/todoapp
+helm upgrade --install todoapp ./.infrastructure/helm-chart/todoapp \
   --namespace todoapp \
-  -f ./helm-chart/todoapp/values.yaml
+  -f ./.infrastructure/helm-chart/todoapp/values.yaml
 
 # Save cluster state for validation.
 kubectl get all,cm,secret,ing -A > output.log
